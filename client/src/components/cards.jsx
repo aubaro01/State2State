@@ -5,7 +5,7 @@ export function BlogPostCard({ post }) {
     <div className="card h-100 border-0 shadow-sm">
       <a href={`/${post.slug}`} className="text-decoration-none">
         <div className="position-relative" style={{ height: "240px" }}>
-          {/* Usando a tag img padrão em vez de Image do Next.js */}
+          
           <img
             src={post.imageUrl || "/placeholder.svg"}
             alt={post.title}
