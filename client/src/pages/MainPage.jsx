@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogPostCard } from "../components/cards";  // Certifique-se de que o caminho do arquivo está correto
+import { BlogPostCard } from "../components/cards"; 
 
 export default function Home() {
   const posts = [
@@ -52,7 +52,7 @@ export default function Home() {
           <section className="row g-4">
             {posts.map((post) => (
               <div key={post.id} className="col-12 col-md-6 col-lg-4">
-                <BlogPostCard post={post} />  {/* Usando o componente BlogPostCard */}
+                <BlogPostCard post={post} /> 
               </div>
             ))}
           </section>
