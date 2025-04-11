@@ -21,7 +21,6 @@ export function GalleryItem({ item, onClick }) {
         }}
         onClick={onClick}
       >
-        {/* Substituindo Image do Next.js por uma tag img padrão */}
         <img
           src={item.imageUrl || "/placeholder.svg"}
           alt={item.title}

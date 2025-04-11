@@ -94,10 +94,7 @@ export default function Gallery() {
         <div className="container py-5">
           <section className="mb-5 text-center">
             <h1 className="display-4 fw-light mb-3">Galeria</h1>
-            <p className="lead text-muted mb-5">
-              Uma coleção de fotografias.
-            </p>
-
+           
             <div className="d-flex justify-content-center mb-5 flex-wrap">
               <div className="btn-group">
                 {categories.map((category) => (
