@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogPostCard } from "../components/cards"; 
+import { BlogPostCard } from "../components/cards";
 
 export default function Home() {
   const posts = [
@@ -35,24 +35,40 @@ export default function Home() {
       imageUrl: "/placeholder.svg?height=400&width=600",
       slug: "luz-e-sombra",
     },
+    {
+      id: 5,
+      title: "Luz e Sombra",
+      excerpt: "Estudos fotográficos sobre o contraste entre luz e sombra.",
+      date: "25 Março, 2025",
+      imageUrl: "/placeholder.svg?height=400&width=600",
+      slug: "luz-e-sombra",
+    },
+    {
+      id: 6,
+      title: "Luz e Sombra",
+      excerpt: "Estudos fotográficos sobre o contraste entre luz e sombra.",
+      date: "25 Março, 2025",
+      imageUrl: "/placeholder.svg?height=400&width=600",
+      slug: "luz-e-sombra",
+    },
   ];
 
   return (
     <div className="min-vh-100 d-flex flex-column bg-white">
       <main className="flex-grow-1">
         <div className="container py-5">
-          <section className="text-center mb-5">
-            <h1 className="display-4 fw-light mb-3">Meu Blog Fotográfico</h1>
-            <p className="lead text-center mb-5">
-              Um espaço dedicado à fotografia minimalista, onde compartilho minhas experiências e capturas através de
-              uma lente simples.
-            </p>
+          <section className="d-flex justify-content-center align-items-center text-center mb-5" style={{ minHeight: '100vh' }}>
+            <div>
+              <h1 className="display-4 fw-light mb-3">
+                State 2 State
+              </h1>
+            </div>
           </section>
 
           <section className="row g-4">
             {posts.map((post) => (
               <div key={post.id} className="col-12 col-md-6 col-lg-4">
-                <BlogPostCard post={post} /> 
+                <BlogPostCard post={post} />
               </div>
             ))}
           </section>
