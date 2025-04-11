@@ -48,4 +48,22 @@
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(45deg, #ff0000, #ff7300);
+    }
+    50% {
+      background: linear-gradient(45deg, #00bfff, #00ff00);
+    }
+    100% {
+      background: linear-gradient(45deg, #ff0000, #ff7300);
+    }
+  }
+  
+  .gradient-background {
+    animation: gradientAnimation 5s ease infinite;
+  }
+  
+
+  
   

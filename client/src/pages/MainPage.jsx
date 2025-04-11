@@ -57,7 +57,7 @@ export default function Home() {
     <div className="min-vh-100 d-flex flex-column bg-white">
       <main className="flex-grow-1">
         <div className="container py-5">
-          <section className="d-flex justify-content-center align-items-center text-center mb-5" style={{ minHeight: '100vh' }}>
+          <section className="gradient-background d-flex justify-content-center align-items-center text-center mb-5" style={{ minHeight: '100vh' }}>
             <div>
               <h1 className="display-4 fw-light mb-3">
                 State 2 State
