@@ -1,10 +1,9 @@
 const express = require("express");
 const { uploadPhoto, getPhotos } = require("../controllers/photoController");
-const { authenticate } = require("../middlewares/authMiddleaware");
 
 const router = express.Router();
 
-router.post("/upload", authenticate, uploadPhoto);
-router.get("/photos", authenticate, getPhotos);
+router.post("/upload",  uploadPhoto);
+router.get("/photos", getPhotos);
 
 module.exports = router;

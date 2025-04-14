@@ -7,12 +7,14 @@ const storage = multer.diskStorage({
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + path.extname(file.originalname));
   },
 });
 
 const upload = multer({
   storage,
+  limits: { fileSize: 10 * 1024 * 1024 }, 
   fileFilter: (req, file, cb) => {
     const allowedTypes = /jpeg|jpg|png/;
     const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
@@ -21,7 +23,7 @@ const upload = multer({
     if (extname && mimetype) {
       return cb(null, true);
     } else {
-      cb(new Error("Arquivo não permitido"), false);
+      cb(new Error("Arquivo não permitido. Apenas imagens JPEG, JPG e PNG são aceitas."), false);
     }
   },
 }).single("photo");
@@ -32,14 +34,17 @@ const uploadPhoto = async (req, res) => {
       return res.status(400).json({ msg: err.message });
     }
 
-    const { title, description } = req.body;
+    const { title, description, local } = req.body;
+    if (!title || !description || !local) {
+      return res.status(400).json({ msg: "Faltando dados obrigatórios: título, descrição ou local." });
+    }
 
     try {
       const newPhoto = new Photo({
         title,
         description,
+        local, 
         imageUrl: `/uploads/${req.file.filename}`,
-        userId: req.userId,
       });
 
       await newPhoto.save();
@@ -52,7 +57,7 @@ const uploadPhoto = async (req, res) => {
 
 const getPhotos = async (req, res) => {
   try {
-    const photos = await Photo.find({ userId: req.userId });
+    const photos = await Photo.find();
     res.json(photos);
   } catch (err) {
     res.status(500).json({ msg: "Erro ao procurar fotos", error: err.message });
