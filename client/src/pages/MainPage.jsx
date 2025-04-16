@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogPostCard } from "../components/cards";
-
+import imgPath from '../uploads/IMG_6750.jpg';
 export default function Home() {
   const posts = [
     {
@@ -66,7 +66,7 @@ export default function Home() {
             <div
               className="position-absolute top-0 start-0 w-100 h-100"
               style={{
-                backgroundImage: "url('/api/placeholder/1600/900')",
+                backgroundImage: `url(${imgPath})`,            
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
@@ -82,9 +82,6 @@ export default function Home() {
               <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
                 <a role="button" className="btn btn-outline-light btn-lg px-4" href="/gallery">
                   Explorar Galeria
-                </a>
-                <a role="button" className="btn btn-outline-light btn-lg px-4" href="/about">
-                  Sobre o Projeto
                 </a>
               </div>
             </div>
