@@ -36,7 +36,7 @@ const uploadPhoto = async (req, res) => {
 
     const { title, description, local } = req.body;
     if (!title || !description || !local) {
-      return res.status(400).json({ msg: "Faltando dados obrigatórios: título, descrição ou local." });
+      return res.status(400).json({ msg: "Falta dados obrigatórios: título, descrição ou local." });
     }
 
     try {
