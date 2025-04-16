@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="row align-items-center">
               <div className="col-md-6 mb-3 mb-md-0">
                 <p className="text-muted small mb-0">
-                  © {currentYear} State2State.  Todos os direitos reservados.
+                  © {currentYear} State2State. <br /> Todos os direitos reservados.
                 </p>
               </div>
               <div className="col-md-6">
