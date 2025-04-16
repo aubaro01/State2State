@@ -57,20 +57,58 @@ export default function Home() {
     <div className="min-vh-100 d-flex flex-column bg-white">
       <main className="flex-grow-1">
         <div className="container py-5">
-          <section className="gradient-background d-flex justify-content-center align-items-center text-center mb-5" style={{ minHeight: '100vh' }}>
-            <div>
-              <h1 className="display-4 fw-light mb-3">
-                State 2 State
-              </h1>
+          <section
+            className="gradient-background d-flex flex-column justify-content-center align-items-center text-center position-relative overflow-hidden"
+            style={{ minHeight: '100vh' }}
+          >
+            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark" style={{ opacity: 0.5, zIndex: 1 }}></div>
+
+            <div
+              className="position-absolute top-0 start-0 w-100 h-100"
+              style={{
+                backgroundImage: "url('/api/placeholder/1600/900')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                zIndex: 0
+              }}
+              role="img"
+              aria-label="Fundo ilustrativo com paisagem dos estados"
+            ></div>
+
+            <div className="container position-relative z-2">
+              <h1 className="display-2 fw-bold text-white mb-3">State 2 State</h1>
+
+              <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                <a role="button" className="btn btn-outline-light btn-lg px-4" href="/gallery">
+                  Explorar Galeria
+                </a>
+                <a role="button" className="btn btn-outline-light btn-lg px-4" href="/about">
+                  Sobre o Projeto
+                </a>
+              </div>
+            </div>
+            <div className="position-absolute bottom-0 mb-4 text-white z-2 text-center">
+              <p className="mb-1 small text-white">Ver mais</p>
+              <a href="#PostRe" className="text-white d-inline-block">
+                <i className="bi bi-chevron-down fs-4"></i>
+              </a>
+
             </div>
           </section>
 
-          <section className="row g-4">
-            {posts.map((post) => (
-              <div key={post.id} className="col-12 col-md-6 col-lg-4">
-                <BlogPostCard post={post} />
+          <section id="PostRe" className="py-5 bg-light">
+            <div className="container">
+              <h2 className="mb-4 text-center">Posts Recentes</h2>
+
+              <div className="row g-4">
+                {posts.map((post) => (
+                  <div key={post.id} className="col-12 col-md-6 col-lg-4">
+                    <BlogPostCard post={post} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </section>
         </div>
       </main>

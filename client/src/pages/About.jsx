@@ -4,7 +4,7 @@ import '../styles/About.css';
 const About = () => {
   return (
     <div className="about-container">
-      <h2>Sobre este Blog</h2>
+      <h2>Sobre este Rep</h2>
       <p>
         "State 2 state"
       </p>
@@ -12,7 +12,7 @@ const About = () => {
         A inspiração para a construção surgiu de um motivo muito particular, eu sou uma pessoa "low-porfile", por esse motivo não costumo postar muita nas redes sociais.
       </p>
       <p>
-        O objetivo deste blog é mostra algumas fotos que eu acho que são fixes.
+        O objetivo deste rep é mostra algumas fotos que eu acho que são fixes.
       </p>
       <p>
         Por isso, espero que aproveitem...
@@ -21,7 +21,7 @@ const About = () => {
       <p className="about-assist">
           Cláudio Barroso
           <br />
-          <em>TAKE A TRIP</em>
+          <em>"u trippin bro"</em>
       </p>
     </div>
   );
