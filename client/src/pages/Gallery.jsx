@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { GalleryItem } from "../components/galleryItem";
-import { GalleryModal } from "../components/galleryModal";
+import { GalleryItem } from "../components/gallery/galleryItem";
+import { GalleryModal } from "../components/gallery/galleryModal";
 
 
 export default function Gallery() {
