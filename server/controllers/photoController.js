@@ -1,5 +1,5 @@
 const path = require('path');
-const Photo = require('../models/photo');
+const Photo = require('../models/photoModel');
 
 const getPhotosByCategory = async (req, res) => {
   const { category } = req.params;
