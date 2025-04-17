@@ -1,9 +1,9 @@
-const express = require("express");
-const { uploadPhoto, getPhotos } = require("../controllers/photoController");
-
+const express = require('express');
 const router = express.Router();
+const { getPhotosByCategory, getRecentPhotos, getAllPhotos } = require('../controllers/photoController');
 
-router.post("/upload",  uploadPhoto);
-router.get("/photos", getPhotos);
+router.get('/category/:category', getPhotosByCategory);
+router.get('/recent', getRecentPhotos);
+router.get('/all', getAllPhotos); 
 
 module.exports = router;
