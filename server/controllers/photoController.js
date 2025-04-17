@@ -31,14 +31,19 @@ const getRecentPhotos = async (req, res) => {
 const getAllPhotos = async (req, res) => {
   try {
     const photos = await Photo.find();
-    res.status(200).json(photos.map(photo => ({
+
+    const result = photos.map(photo => ({
       ...photo.toObject(),
-      imageUrl: path.join('/uploads/', photo.imageUrl)
-    })));
+      imageUrl: `/uploads/${photo.imageUrl}` 
+    }));
+
+    res.status(200).json(result);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao buscar todas as fotos', error });
+    console.error("Erro ao buscar fotos:", error);
+    res.status(500).json({ message: 'Erro ao buscar todas as fotos', error: error.message });
   }
 };
+
 
 module.exports = {
   getPhotosByCategory,
