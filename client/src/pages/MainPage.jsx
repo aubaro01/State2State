@@ -1,6 +1,7 @@
 import React from "react";
 import { BlogPostCard } from "../components/cards";
 import imgPath from '../uploads/IMG_6750.jpg';
+
 export default function Home() {
   const posts = [
     {
@@ -27,57 +28,33 @@ export default function Home() {
       imageUrl: "/placeholder.svg?height=400&width=600",
       slug: "retratos-minimalistas",
     },
-    {
-      id: 4,
-      title: "Luz e Sombra",
-      excerpt: "Estudos fotográficos sobre o contraste entre luz e sombra.",
-      date: "25 Março, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "luz-e-sombra",
-    },
-    {
-      id: 5,
-      title: "Luz e Sombra",
-      excerpt: "Estudos fotográficos sobre o contraste entre luz e sombra.",
-      date: "25 Março, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "luz-e-sombra",
-    },
-    {
-      id: 6,
-      title: "Luz e Sombra",
-      excerpt: "Estudos fotográficos sobre o contraste entre luz e sombra.",
-      date: "25 Março, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "luz-e-sombra",
-    },
   ];
 
   return (
-    <div className="min-vh-100 d-flex flex-column bg-white">
+    <div className="min-vh-100 d-flex flex-column">
       <main className="flex-grow-1">
         <div className="container py-5">
           <section
-            className="gradient-background d-flex flex-column justify-content-center align-items-center text-center position-relative overflow-hidden"
+            className="d-flex flex-column justify-content-center align-items-center text-center position-relative overflow-hidden"
             style={{ minHeight: '100vh' }}
           >
-            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark" style={{ opacity: 0.5, zIndex: 1 }}></div>
-
+            {/* Imagem de fundo */}
             <div
               className="position-absolute top-0 start-0 w-100 h-100"
               style={{
-                backgroundImage: `url(${imgPath})`,            
+                backgroundImage: `url(${imgPath})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
-                zIndex: 0
+                zIndex: 0,
               }}
               role="img"
               aria-label="Fundo ilustrativo com paisagem dos estados"
             ></div>
 
-            <div className="container position-relative z-2">
-              <h1 className="display-2 fw-bold text-white mb-3">State 2 State</h1>
+            {/* Conteúdo */}
+            <div className="container position-relative z-1 text-white">
+              <h1 className="display-2 fw-bold mb-3">State 2 State</h1>
 
               <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
                 <a role="button" className="btn btn-outline-light btn-lg px-4" href="/gallery">
@@ -85,16 +62,17 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="position-absolute bottom-0 mb-4 text-white z-2 text-center">
-              <p className="mb-1 small text-white">Ver mais</p>
+
+            {/* Ícone para rolar */}
+            <div className="position-absolute bottom-0 mb-4 text-white z-1 text-center">
+              <p className="mb-1 small">Ver mais</p>
               <a href="#PostRe" className="text-white d-inline-block">
                 <i className="bi bi-chevron-down fs-4"></i>
               </a>
-
             </div>
           </section>
 
-          <section id="PostRe" className="py-5 bg-light">
+          <section id="PostRe" className="py-5">
             <div className="container">
               <h2 className="mb-4 text-center">Posts Recentes</h2>
 
