@@ -4,24 +4,24 @@ import '../styles/About.css';
 const About = () => {
   return (
     <div className="about-container">
-      <h2>Sobre este Rep</h2>
+      <h2>Sobre este Repositório</h2>
       <p>
-        "State 2 state"
+        <strong>"State 2 State"</strong>
       </p>
       <p>
-        A inspiração para a construção surgiu de um motivo muito particular, eu sou uma pessoa "low-porfile", por esse motivo não costumo postar muita nas redes sociais.
+        A inspiração para este projeto veio de algo bastante pessoal. Sou uma pessoa discreta — "low-profile" — e, por isso, não costumo partilhar muito nas redes sociais.
       </p>
       <p>
-        O objetivo deste rep é mostra algumas fotos que eu acho que são fixes.
+        O objetivo deste repositório é simplesmente mostrar algumas fotos que, na minha opinião, são fixes.
       </p>
       <p>
-        Por isso, espero que aproveitem...
+        Por isso, espero que gostem e aproveitem o conteúdo.
       </p>
       <br />
       <p className="about-assist">
-          Cláudio Barroso
-          <br />
-          <em>"u trippin bro"</em>
+        Cláudio Barroso
+        <br />
+        <em>"u trippin bro"</em>
       </p>
     </div>
   );
