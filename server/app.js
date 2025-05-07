@@ -12,7 +12,7 @@ const photoRoutes = require("./routes/photoRoute");
 
 app.use("/api/photos", photoRoutes);
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
