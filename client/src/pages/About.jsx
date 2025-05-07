@@ -19,7 +19,7 @@ const About = () => {
       </p>
       <br />
       <p className="about-assist">
-        Cláudio Barroso
+        - Cláudio Barroso
         <br />
         <em>"u trippin bro"</em>
       </p>

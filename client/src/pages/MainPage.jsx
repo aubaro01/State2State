@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BlogPostCard } from "../components/cards";
 import imgPath from '../uploads/IMG_6750.jpg';
 
 export default function Home() {
-  const posts = [
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        // Substitua pela URL real da sua API
+        const response = await fetch('https://sua-api.com/posts/recentes');
+        
+        if (!response.ok) {
+          throw new Error('Falha ao carregar posts');
+        }
+        
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+  // Dados de fallback caso a API não esteja disponível
+  const fallbackPosts = [
     {
       id: 1,
       title: "Paisagens Urbanas",
@@ -12,23 +39,27 @@ export default function Home() {
       imageUrl: "/placeholder.svg?height=400&width=600",
       slug: "paisagens-urbanas",
     },
-    {
-      id: 2,
-      title: "Natureza em Foco",
-      excerpt: "Explorando a beleza natural através das minhas lentes.",
-      date: "5 Abril, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "natureza-em-foco",
-    },
-    {
-      id: 3,
-      title: "Retratos Minimalistas",
-      excerpt: "A simplicidade e elegância dos retratos em preto e branco.",
-      date: "1 Abril, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "retratos-minimalistas",
-    },
+    // ... outros posts de fallback
   ];
+
+  // Se estiver carregando, mostra um spinner
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center min-vh-100">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Carregando...</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Se houver erro, mostra mensagem de erro (mas ainda mostra o conteúdo com fallback)
+  if (error) {
+    console.error(error);
+  }
+
+  // Usa posts da API ou fallback se não houver posts
+  const displayedPosts = posts.length > 0 ? posts : fallbackPosts;
 
   return (
     <div className="min-vh-100 d-flex flex-column">
@@ -76,8 +107,14 @@ export default function Home() {
             <div className="container">
               <h2 className="mb-4 text-center">Posts Recentes</h2>
 
+              {error && (
+                <div className="alert alert-warning">
+                  Não foi possível carregar os posts recentes. Mostrando conteúdo de fallback.
+                </div>
+              )}
+
               <div className="row g-4">
-                {posts.map((post) => (
+                {displayedPosts.map((post) => (
                   <div key={post.id} className="col-12 col-md-6 col-lg-4">
                     <BlogPostCard post={post} />
                   </div>
