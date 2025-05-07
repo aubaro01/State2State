@@ -13,7 +13,7 @@ const photoRoutes = require("./routes/photoRoute");
 app.use("/api/photos", photoRoutes);
 
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'State2state api online :))))!!' });
+    app.use(express.static(path.join(__dirname, '../public')));
 }); 
 
 module.exports = app;
