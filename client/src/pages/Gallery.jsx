@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useState } from "react";
 import { GalleryItem } from "../components/gallery/galleryItem";
