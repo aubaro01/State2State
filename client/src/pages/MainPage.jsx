@@ -12,23 +12,23 @@ export default function Home() {
       excerpt: "Uma coleção de fotografias capturando a beleza da arquitetura urbana.",
       date: "10 Abril, 2025",
       imageUrl: ImgPag, 
-      slug: "paisagens",
+      slug: "gallery",
     },
     {
       id: 2,
       title: "Natureza",
-      excerpt: "Explorando a beleza natural através das minhas lentes.",
+      excerpt: "Uma coleção de fotografias da natureza, por diversos sitios de portugal",
       date: "5 Abril, 2025",
       imageUrl: imgNat, 
-      slug: "Natureza",
+      slug: "gallery",
     },
     {
       id: 3,
       title: "Retratos",
-      excerpt: "A simplicidade e elegância dos retratos em preto e branco.",
+      excerpt: "Retratos que faz-me lembrar de bons momentos.",
       date: "1 Abril, 2025",
       imageUrl: imgRe, 
-      slug: "sla",
+      slug: "gallery",
     },
   ];
 
