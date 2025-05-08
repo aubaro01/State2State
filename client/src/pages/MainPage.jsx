@@ -1,7 +1,9 @@
 import React from "react";
 import { BlogPostCard } from "../components/cards";
-import imgPath from '../uploads/IMG_6750.jpg';
-
+import imgPath from '../assets/IMG_6750.jpg';
+import ImgPag from '../assets/IMG_6750.jpg';
+import imgNat from '../assets/nat.jpeg';
+import imgRe from '../assets/IMG_0599.jpeg';
 export default function Home() {
   const posts = [
     {
@@ -9,24 +11,24 @@ export default function Home() {
       title: "Paisagens Urbanas",
       excerpt: "Uma coleção de fotografias capturando a beleza da arquitetura urbana.",
       date: "10 Abril, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "paisagens-urbanas",
+      imageUrl: ImgPag, 
+      slug: "paisagens",
     },
     {
       id: 2,
-      title: "Natureza em Foco",
+      title: "Natureza",
       excerpt: "Explorando a beleza natural através das minhas lentes.",
       date: "5 Abril, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "natureza-em-foco",
+      imageUrl: imgNat, 
+      slug: "Natureza",
     },
     {
       id: 3,
-      title: "Retratos Minimalistas",
+      title: "Retratos",
       excerpt: "A simplicidade e elegância dos retratos em preto e branco.",
       date: "1 Abril, 2025",
-      imageUrl: "/placeholder.svg?height=400&width=600",
-      slug: "retratos-minimalistas",
+      imageUrl: imgRe, 
+      slug: "sla",
     },
   ];
 
@@ -38,7 +40,6 @@ export default function Home() {
             className="d-flex flex-column justify-content-center align-items-center text-center position-relative overflow-hidden"
             style={{ minHeight: '100vh' }}
           >
-            {/* Imagem de fundo */}
             <div
               className="position-absolute top-0 start-0 w-100 h-100"
               style={{
@@ -47,12 +48,11 @@ export default function Home() {
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
                 zIndex: 0,
+                filter: 'brightness(0.7)', 
               }}
               role="img"
               aria-label="Fundo ilustrativo com paisagem dos estados"
             ></div>
-
-            {/* Conteúdo */}
             <div className="container position-relative z-1 text-white">
               <h1 className="display-2 fw-bold mb-3">State 2 State</h1>
 
@@ -63,7 +63,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Ícone para rolar */}
             <div className="position-absolute bottom-0 mb-4 text-white z-1 text-center">
               <p className="mb-1 small">Ver mais</p>
               <a href="#PostRe" className="text-white d-inline-block">
@@ -74,7 +73,7 @@ export default function Home() {
 
           <section id="PostRe" className="py-5">
             <div className="container">
-              <h2 className="mb-4 text-center">Posts Recentes</h2>
+              <h2 className="mb-4 text-center">Coleções de Fotos</h2>
 
               <div className="row g-4">
                 {posts.map((post) => (
